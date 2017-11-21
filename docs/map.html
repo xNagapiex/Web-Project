@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<meta charset="UTF-8">
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsgpo1n3E1KaXIjjjeIGa4gRtDcdTHteY&callback=initMap" async defer></script>
 <script>
 var x = document.getElementById("map");
@@ -62,11 +63,8 @@ function showError(error) {
 <div id="main">
 <body>
 <br>
-Click below to get your position <br><br>
-<button onclick="getLocation()">Click</button><br><br>
 <div id="map"></div>
-<br>
-<br>
+<button onclick="getLocation()">Click here to get your position</button><br><br>
 <div id="footer">
 Taru Konttinen - 2017
 </div>
