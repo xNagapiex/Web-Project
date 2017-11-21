@@ -35,7 +35,7 @@
     display:block;
     font-family: Tahoma;
     overflow: auto;
-	background-image: url("images/whitebg");
+	background-image: url("https://xnagapiex.github.io/Web-Project/images/whitebg.png");
 }
 
 #footer {
@@ -82,7 +82,7 @@ a {
 }
 
 a:hover {
-    color: orange;
+    color: #ffa64d;
 }
 
 a#current {
