@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsgpo1n3E1KaXIjjjeIGa4gRtDcdTHteY&callback=initMap" async defer></script>
+<script>
+var x = document.getElementById("map");
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+    } else { 
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+function showPosition(position) {
+    var lat = position.coords.latitude;
+    var lon = position.coords.longitude;
+    var latlon = new google.maps.LatLng(lat, lon)
+    var mapholder = document.getElementById('map')
+    mapholder.style.height = '400px';
+    mapholder.style.width = '500px';
+
+    var myOptions = {
+    center:latlon,zoom:14,
+    mapTypeId:google.maps.MapTypeId.ROADMAP,
+    mapTypeControl:false,
+    navigationControlOptions:{style:google.maps.NavigationControlStyle.SMALL}
+    }
+    
+    var map = new google.maps.Map(document.getElementById("map"), myOptions);
+    var marker = new google.maps.Marker({position:latlon,map:map,title:"You are here!"});
+}
+
+function showError(error) {
+    switch(error.code) {
+        case error.PERMISSION_DENIED:
+            x.innerHTML = "User denied the request for Geolocation."
+            break;
+        case error.POSITION_UNAVAILABLE:
+            x.innerHTML = "Location information is unavailable."
+            break;
+        case error.TIMEOUT:
+            x.innerHTML = "The request to get user location timed out."
+            break;
+        case error.UNKNOWN_ERROR:
+            x.innerHTML = "An unknown error occurred."
+            break;
+    }
+}
+</script>
+<head>
+<title>Web-Project For School</title>
+<link rel='stylesheet' href='css/style.css'/>
+</head>
+<body>
+<body background="https://xnagapiex.github.io/Web-Project/images/symphony.png" bgproperties="fixed">
+<center>
+<div id="container">
+<div id="header"><b>Web-Project For School</b></div>
+<div id="menu"><i><a href="index.html">Index</a> - <a href="table.html">Table</a> - 
+<a href="form.html">Form</a> - <a href="video.html">Video</a> - <a id="current" href="map.html">Map</a></i>
+</div>
+<div id="main">
+<body>
+<br>
+Click below to get your position <br><br>
+<button onclick="getLocation()">Click</button><br><br>
+<div id="map"></div>
+<br>
+<br>
+<div id="footer">
+Taru Konttinen - 2017
+</div>
+</div>
+</body>
+</html>
+
+<!-- Background texture from https://www.toptal.com/designers/subtlepatterns/ -->
