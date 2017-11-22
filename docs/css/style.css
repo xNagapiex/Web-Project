@@ -7,7 +7,7 @@
 
 body {
 	background-image: url("https://xnagapiex.github.io/Web-Project/images/almond-tree.png");
-	background-color: #5374b0;
+	background-color: black;
     background-repeat: no-repeat;
 	background-attachment: fixed;
 }
@@ -48,7 +48,6 @@ body {
 #footer {
     height: 40px;
     display: block;
-	bottom: 0px;
     overflow: auto;
     background-color: #000000;
     color: #FFFFFF;
