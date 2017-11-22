@@ -57,6 +57,18 @@
 
 #list { display:table; margin:6px auto;}
 
+#boxrow {
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+#box {
+    width: 260px;
+    height: 260px;
+	padding: 10px;
+    border: 1px solid #aaaaaa;
+}
 
 table {
     width: 300px;
@@ -80,6 +92,19 @@ th {
     height: 30px;
 }
 
+input#button {
+	background-color: #ffa64d;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
 button {
     background-color: #ffa64d;
     border: none;
@@ -99,6 +124,16 @@ a {
 }
 
 a:hover {
+    color: #ff9933;
+}
+
+a#resource {
+	text-decoration: underline;
+    color: black;
+}
+
+a#resource:hover {
+	text-decoration: underline;
     color: #ff9933;
 }
 

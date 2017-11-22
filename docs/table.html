@@ -2,6 +2,21 @@
 <html>
 <meta charset="UTF-8">
 <head>
+<script>
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+}
+</script>
 <title>Web-Project For School</title>
 <link rel='stylesheet' href='css/style.css'/>
 </head>
@@ -11,15 +26,17 @@
 <div id="container">
 <div id="header"><b>Web-Project For School</b></div>
 <div id="menu"><i><a href="index.html">Index</a> - <a id="current" href="table.html">Table</a> - 
-<a href="form.html">Form</a> - <a href="video.html">Video</a> - <a href="map.html">Map</a></i>
+<a href="form.html">Form</a> - <a href="video.html">Video</a> - <a href="map.html">Map</a> - <a href="copyright.html">Copyright</a></i>
 </div>
 <div id="main">
 <body>
-<table>
 <br>
-<caption><b>My table:</b><br><br></caption>
+<table>
+<caption>Here, I made a table:<br>
+<br>
+</caption>
 <tr>
-<th colspan="3">This is a table</th>
+<th colspan="3">Creative table</th>
 </tr>
 <tr>
 <td>1</td>
@@ -32,6 +49,18 @@
 <td>6</td>
 </tr>
 </table>
+
+<br>
+On another note, try dragging this picture into the boxes below:<br><br>
+<img id="drag1" src="images/hamlet.png" draggable="true" ondragstart="drag(event)"><br><br>
+<div id="boxrow">
+<div id="box" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<div id="box" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+</div>
+<div id="boxrow">
+<div id="box" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<div id="box" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+</div>
 <br>
 <br>
 <div id="footer">

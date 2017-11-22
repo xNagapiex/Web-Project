@@ -3,8 +3,10 @@
 <meta charset="UTF-8">
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsgpo1n3E1KaXIjjjeIGa4gRtDcdTHteY&callback=initMap" async defer></script>
 <script>
-var x = document.getElementById("map");
 function getLocation() {
+
+	var x = document.getElementById('mapError');
+	
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition, showError);
     } else { 
@@ -27,11 +29,14 @@ function showPosition(position) {
     navigationControlOptions:{style:google.maps.NavigationControlStyle.SMALL}
     }
     
-    var map = new google.maps.Map(document.getElementById("map"), myOptions);
+    var map = new google.maps.Map(document.getElementById('map'), myOptions);
     var marker = new google.maps.Marker({position:latlon,map:map,title:"You are here!"});
 }
 
 function showError(error) {
+
+	var x = document.getElementById('mapError');
+	
     switch(error.code) {
         case error.PERMISSION_DENIED:
             x.innerHTML = "User denied the request for Geolocation."
@@ -58,11 +63,12 @@ function showError(error) {
 <div id="container">
 <div id="header"><b>Web-Project For School</b></div>
 <div id="menu"><i><a href="index.html">Index</a> - <a href="table.html">Table</a> - 
-<a href="form.html">Form</a> - <a href="video.html">Video</a> - <a id="current" href="map.html">Map</a></i>
+<a href="form.html">Form</a> - <a href="video.html">Video</a> - <a id="current" href="map.html">Map</a> - <a href="copyright.html">Copyright</a></i>
 </div>
 <div id="main">
 <body>
 <br>
+<div id="mapError"></div>
 <div id="map"></div>
 <button onclick="getLocation()">Click here to get your position</button><br><br>
 <div id="footer">
