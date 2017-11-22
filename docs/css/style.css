@@ -5,6 +5,12 @@
     flex-direction: column;
 }
 
+body {
+	background-image: url("https://xnagapiex.github.io/Web-Project/images/almond-tree.jpg");
+    background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
 #header {
     height: 80px;
     width: 1100px;
