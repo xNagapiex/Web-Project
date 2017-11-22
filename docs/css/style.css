@@ -47,7 +47,8 @@ body {
 
 #footer {
     height: 40px;
-    display:block;
+    display: block;
+	bottom: 0px;
     overflow: auto;
     background-color: #000000;
     color: #FFFFFF;
